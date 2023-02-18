@@ -1,0 +1,12 @@
+Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%) :  CVD\CRD
+
+Multidimensional poverty headcount ratio (% of total population)  : poverty
+
+Number of people who are undernourished : undernourished
+
+GDP per capita (constant LCU) :  GDP
+
+Immunization, measles (% of children ages 12-23 months) : mmunization_measles
+
+  Out-of-pocket expenditure per capita, PPP (current international $) : ppp
+
