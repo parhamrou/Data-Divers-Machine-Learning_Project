@@ -1,9 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import mpld3
-import streamlit.components.v1 as components
 import plotly.express as px
 
 countries = st.session_state.countries

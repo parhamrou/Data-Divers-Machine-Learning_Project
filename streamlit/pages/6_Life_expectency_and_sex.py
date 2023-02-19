@@ -1,9 +1,8 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import mpld3
-import streamlit.components.v1 as components
+import plotly.graph_objects as go
+
 
 st.header("Life expectency based on sex")
 """
@@ -18,8 +17,14 @@ df[columns] = df[columns].apply(pd.to_numeric, errors='coerce', axis=1)
 ages=['At 15', 'At 65', 'At 80']
 men = df[['Male Life Expectancy at Age 15 (years)', 'Male Life Expectancy at Age 65 (years)', 'Male Life Expectancy at Age 80 (years)']].mean()
 women = df[['Female Life Expectancy at Age 15 (years)', 'Female Life Expectancy at Age 65 (years)', 'Female Life Expectancy at Age 80 (years)']].mean()
-fig = plt.figure()
-plt.bar(ages ,men, label='Men')
-plt.bar(ages, women, label='Women', bottom=men)
-plt.legend()
-st.pyplot(fig)
+fig = go.Figure()
+fig.add_bar(name='Men' ,x=ages ,y=men)
+fig.add_bar(x=ages, y=women, name='Women', base='Men')
+fig.update_layout(yaxis_title="Life expectency (years)")
+st.plotly_chart(fig)
+
+"""
+We usually hear that women live longer than men, and this graph shows that it is not a wrong claim. 
+Biological differences help to explain women's higher longevity. Scientists believe that estrogen in women combats conditions such as heart disease by helping reduce circulatory levels of harmful cholesterol. 
+Women are also thought to have stronger immune systems than men, and all of these factors cause women to have longer lives than men.
+"""
